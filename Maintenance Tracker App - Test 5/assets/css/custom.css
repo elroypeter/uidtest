@@ -1,0 +1,589 @@
+-------------------------------------------
+general css for login and sign up pages
+-------------------------------------------
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #333;	
+	background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+}
+
+.menu {
+	grid-column: 1/3;
+	grid-area: navigation;
+	grid-row: 2/3;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	background-color: #f1f1f1;
+}
+
+.nav {
+	text-align: right;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav li {
+    display: inline;
+    font-size: 20px;
+}
+
+.nav li a {
+    display: inline-block;
+    color: #337ab7;
+    text-align: right;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background: #555;
+    color: white;
+}
+
+.nav a:hover {
+	outline: none;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 0px;
+    }
+    .nav li a {
+        display: block;
+        text-align: left;
+        padding: 10px;
+        margin: 0px;
+    }
+}
+
+/* nested contains a grid for form page and body page */
+.nested {
+	background: 
+		linear-gradient( 
+			rgba(8, 180, 245, 0.75),
+			rgba(3, 20, 27, 0.91)), 
+			url("../images/bground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*
+@media (max-width: 768px) {
+    .nested {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "content1" 
+            "content2";
+    }
+}
+
+@media (max-width: 482px) {
+    .nested {
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "content1"
+            "content2";
+    }
+}
+
+@media (max-width: 150px) {
+    .nested {
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "content1"
+            "content2";
+    }
+}*/
+
+.mid-container {
+    display: grid;
+    grid-area: main-content;
+    grid-column: 1/3;
+    grid-template-columns: auto 60% auto;
+    grid-template-areas: 
+        "gap1 form gap2";
+    background: 
+        linear-gradient( 
+            rgba(8, 180, 245, 0.75),
+            rgba(3, 20, 27, 0.91));
+}
+
+.min-cont {
+    grid-area: form;
+    grid-column: 2/3;
+}
+    @media(max-width: 768px) {
+        .mid-container {
+            display: grid;
+            grid-template-columns: auto 75% auto;
+        }
+    }
+
+    @media(max-width: 482px) {
+        .mid-container {
+            display: grid;
+            grid-template-columns: auto 95% auto;
+        }
+    }
+
+.body-content {
+    grid-area: content2;
+    color: white;
+	padding: 0px 10px 0px 10px;
+}
+.body-content h2{
+    color: white;
+    margin-bottom: 16px !important;
+    font: 300 Roboto;
+    font-size: 54px;
+    text-transform: none;
+}
+.body-content p{
+    font: 24px 300 Roboto; 
+}
+
+@media (max-width: 768px) {
+    .body-content h2{
+        font-size: 29px;
+    }
+}
+
+@media (max-width: 150px) {
+    .body-content h2{
+        font-size: 24px;
+    }
+}
+
+.content {
+	font-size: 20px;
+}
+
+.about {
+    padding: 30px;
+    font-size: 20px;
+    background-color: #f1f1f1;
+}
+
+.about li {
+    padding: 0px 10px;
+    margin: 0px 20px;
+}
+
+.contact-form input[type="submit"] {
+    text-align: center;
+    border-radius: none;
+    border: 2px solid #aaa;
+    padding: 15px;
+    color: #000;
+}
+.contact-form input[type="submit"]:hover {
+    background-color: #aaa;
+    border: 2px solid #aaa;
+    padding: 15px;
+    color: #fff;
+}
+
+/*.button {
+    text-align: center;
+    border-radius:none;
+    border: 2px solid #aaa;
+    padding: 15px;
+    color: #000;
+}*/
+/*.button:hover {
+    background-color: #aaa;
+    border: 2px solid #aaa;
+    padding: 15px;
+    color: #fff;
+}*/
+
+.services {
+    grid-column: 1/3;
+    grid-area: services;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "service-header"
+        "service";
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+    .service-header {
+        grid-row: 1/2;
+        grid-area: service-header;
+    }
+    .service {
+        grid-row: 2/3;
+        grid-area: service;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        grid-template-areas: 
+            "happy clarity feedbck"
+    }
+
+    .service img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .service1 {
+        grid-area: happy;
+        padding: 15px;
+    }
+    .service2 {
+        grid-area: clarity;
+        padding: 15px;
+    }
+    .service3 {
+        grid-area: feedbck;
+        padding: 15px;
+    }
+    
+    @media(max-width: 482px) {
+        .service {
+            grid-template-rows: auto auto auto;
+            grid-template-areas: 
+                "happy happy happy"
+                "clarity clarity clarity"
+                "feedbck feedbck feedbck"
+        }
+    }
+
+.pricing {
+    grid-column: 1/3;
+    grid-area: pricing;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "price-header"
+        "price";
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+    .price-header {
+        grid-row: 1/2;
+        grid-area: price-header;
+    }
+    .price {
+        grid-row: 2/3;
+        grid-area: price;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-areas: 
+                "price1 price2 price3";
+        grid-gap: 10px;
+    }
+    .price-panel1 {
+        border: 1px solid #0981b1 !important; 
+        border-radius:0 !important;
+        grid-area: price1;
+        grid-column: 1/2;
+    }
+    .price-panel2 {
+        border: 1px solid #0981b1 !important; 
+        border-radius:0 !important;
+        grid-area: price2;
+        grid-column: 2/3;
+    }
+    .price-panel3 {
+        border: 1px solid #0981b1 !important; 
+        border-radius:0 !important;
+        grid-area: price3;
+        grid-column: 3/4;
+        margin: 0px;
+    }
+
+    .card:hover{
+        box-shadow: 5px 10px 40px rgba(0,0,0, .7);
+    }
+
+    @media (max-width: 768px) {
+        .price {
+            grid-template-columns: 32% 32% 32%;
+        }
+    }
+
+    @media (max-width: 602px) {
+        .price {
+            display: grid;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: 
+                "price1"
+                "price2"
+                "price3";
+        }
+        .price-panel1 {
+            grid-area: price1;
+            grid-column: 1/4;
+        }
+        .price-panel2 {
+            grid-area: price2;
+            grid-column: 1/4;
+        }
+        .price-panel3 {
+            grid-area: price3;
+            grid-column: 1/4;
+        }
+    }
+
+
+.panel {
+    margin: 0px 0px;
+    /*display: grid;
+    grid-template-rows: 150px auto 250px;
+    grid-template-areas: 
+        "panel-header"
+        "panel-body"
+        "panel-footer";*/
+    transition: box-shadow 0.5s;
+}
+
+
+
+.panel-header {
+    grid-area: panel-header;
+    color: #fff !important;
+    background-color: #0981b1 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+}
+
+@media (max-width: 768px) {
+    .panel-header {
+        font-size: 18px;
+        padding: 5px;
+    }
+}
+
+/*.panel-body {
+    grid-area: panel-body;
+    padding: 0px 5px;
+}
+*/
+.panel-footer {
+    grid-area: panel-footer;
+    background-color: white !important;
+  }
+
+.panel-footer h3 {
+    font-size: 32px;
+}
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 18px;
+}
+.panel-footer .btn {
+    background-color: #0981b1;
+    color: #fff;
+}
+.panel-footer .btn:hover {
+    background-color: #fff !important;
+    color: #0981b1;
+}
+
+.contact {
+    grid-column: 1/3;
+    grid-area: contact;
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: 
+        "contacts contact-form";
+    padding: 20px;
+    font-size: 18px;
+    margin: 0px;
+    background-color: rgba(5, 55, 75, 0.9);
+    color: #fff;
+}
+
+.contacts {
+    grid-column: 2/3;
+    grid-area: contacts;
+}
+
+.contact-form {
+    grid-column: 1/2;
+    grid-area: contact-form;
+    padding: 10px 10px;
+    margin: 0px;
+}
+
+
+
+    @media(max-width: 768px) {
+        .contact {
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-template-areas: 
+                "contacts contacts"
+                "contact-form contact-form";
+        }
+        .contacts {
+            grid-area: contacts;
+        }
+        .contact-form {
+            grid-area: contact-form;
+        }
+    }
+
+    @media(max-width: 482px) {
+        .contact {
+            padding: 10px;
+        }
+    }
+
+.contact h2 {
+    color: white;
+    margin: 0px;
+}
+
+footer {
+	grid-area: footer;
+	margin: 1px 0px 5px 0px;
+	grid-column: 1/3;
+	display: block;
+	padding: 20px;
+	background-color: #2f2d2d;
+	font: 15px Verdana, sans-serif;
+	color: #fff;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2em;
+	font-family: inherit;
+	line-height: 1.5;
+	color: inherit;
+}
+
+/*button, input {
+	font: inherit;
+    border:none;
+	color: inherit;
+}*/
+
+.submit {
+	background-color:  rgb(40, 167, 69);
+	color: #fff;
+	padding: 15px 0px 15px 0px;
+	display: block;
+    text-align: center;
+    width: 30%;
+}
+
+.submit:hover{
+    opacity: 0.8;
+}
+
+@media (max-width: 282px) {
+    .submit {
+        padding: 12px 0px;
+        margin: 5px 0px;
+    }
+}
+/*
+button, input[type="button"], input[type="text"], input[type="submit"] {
+	cursor: pointer;
+    border-radius:none;
+} 
+
+input[type="search"] {
+	border: 1px solid #ccc;
+	border-radius:none;
+	padding: 5px;
+	-webkit-appearance: textfield;
+}*/
+
+@media (max-width: 768px) {
+    input[type="search"] {
+        margin: 10px 0px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 482px) {
+    input[type="search"] {
+        margin: 10px 0px;
+        width: 100%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.checkbox, .radiobox {
+	position: relative;
+	display: inline;
+	margin: 15px 5px 15px;
+	cursor: pointer;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+.display-3{
+    font-size: 4.0em;
+}
+.display-4{
+    font-size: 3.0em;
+}
+h2 {
+    padding: 10px;
+}
+@media (max-width: 482px) {
+    h2, h3 {
+        text-align: center
+    }
+}
+
+h2 {
+      text-transform: uppercase;
+      color: #303030;
+}
+
+h4 {
+      font-size: 21px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+}
+
+.error-message p {
+    color: red;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    margin: 2px 0px;
+}
+
+.success-message p {
+    color: green;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    margin: 2px 0px;
+}
